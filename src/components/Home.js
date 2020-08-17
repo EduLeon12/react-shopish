@@ -4,7 +4,7 @@ import ItemCount from "./ItemCount";
 
 function Home({ greeting }) {
   return (
-    <header className="App-header">
+    <main className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
       <p>{greeting}</p>
       <ItemCount
@@ -13,7 +13,7 @@ function Home({ greeting }) {
         max={5}
         onAdd={(count) => console.log("Tienes de este producto:", count)}
       />
-    </header>
+    </main>
   );
 }
 export default Home;
