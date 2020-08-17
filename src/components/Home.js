@@ -1,19 +1,18 @@
 import React from "react";
 import logo from "../logo.svg";
+import ItemCount from "./ItemCount";
 
 function Home({ greeting }) {
   return (
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
       <p>{greeting}</p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        react
-      </a>
+      <ItemCount
+        initial={0}
+        min={0}
+        max={5}
+        onAdd={(count) => console.log("Tienes de este producto:", count)}
+      />
     </header>
   );
 }
