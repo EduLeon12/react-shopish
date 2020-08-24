@@ -1,6 +1,7 @@
 import React from "react";
 import Item from "./Item";
 import logo from "../logo.svg";
+import image from "../macbook.jpg";
 
 function getProducts() {
   return new Promise((resolve, reject) => {
@@ -27,9 +28,9 @@ export default function ItemList() {
       <h4>Loading...</h4>
     </div>
   ) : (
-    <ul className="container bg-gray-900  p-6 flex flex-col m-auto">
+    <ul className="container bg-gray-900  p-6 flex flex-wrap m-auto">
       {products.map((item) => (
-        <li className="bg-gray-900 p-6 flex flex-col m-auto " key={item.id}>
+        <li className="bg-gray-900 flex mx-auto " key={item.id}>
           <Item item={item} />
         </li>
       ))}
@@ -39,7 +40,7 @@ export default function ItemList() {
 const products = [
   {
     id: 0,
-    src: "./macbook.jpg",
+    src: image,
     name: "MacBook Pro 1",
     description: "I7 3.40gz",
     price: "700$",
