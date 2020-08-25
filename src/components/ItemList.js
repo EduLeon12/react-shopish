@@ -48,7 +48,7 @@ const products = [
   },
   {
     id: 1,
-    src: "./macbook.jpg",
+    src: "",
     name: "MacBook Pro 2",
     description: "I7 3.40gz",
     price: "700$",
@@ -64,7 +64,7 @@ const products = [
   },
   {
     id: 3,
-    src: "./macbook.jpg",
+    src: "",
     name: "MacBook Pro 4",
     description: "I7 3.40gz",
     price: "700$",
@@ -72,7 +72,7 @@ const products = [
   },
   {
     id: 4,
-    src: "./macbook.jpg",
+    src: "",
     name: "MacBook Pro 5 ",
     description: "I7 3.40gz",
     price: "700$",
@@ -80,7 +80,7 @@ const products = [
   },
   {
     id: 5,
-    src: "./macbook.jpg",
+    src: "",
     name: "MacBook Pro 6",
     description: "I7 3.40gz",
     price: "700$",
@@ -88,7 +88,7 @@ const products = [
   },
   {
     id: 6,
-    src: "./macbook.jpg",
+    src: "",
     name: "MacBook Pro 7",
     description: "I7 3.40gz",
     price: "700$",
@@ -96,7 +96,7 @@ const products = [
   },
   {
     id: 7,
-    src: "./macbook.jpg",
+    src: "",
     name: "MacBook Pro 8",
     description: "I7 3.40gz",
     price: "700$",
