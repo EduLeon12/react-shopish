@@ -14,6 +14,7 @@ function getProductById() {
 export default function ItemList() {
   const [item, setItem] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
+  import image from "./macbook.jpg";
 
   React.useEffect(() => {
     getProductById().then((result) => {

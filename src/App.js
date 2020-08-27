@@ -14,7 +14,7 @@ function App() {
           <Route exact path="/">
             <Home greeting="Bienvenidos a mi ecommerce" />
           </Route>
-          <Route path="/cart">
+          <Route path="/Cart">
             <Cart />
           </Route>
         </Switch>
