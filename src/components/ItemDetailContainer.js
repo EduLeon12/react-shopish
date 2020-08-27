@@ -1,27 +1,29 @@
 import React from "react";
 import ItemDetail from "./ItemDetail";
 import logo from "../logo.svg";
-import image from "../macbook.jpg";
+import { useParams } from "react-router-dom";
+import { products } from "../db";
 
-function getProductById() {
+function getProductById(id) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
+      const product = products.find((product) => product.id.toString() === id);
       resolve(product);
-    }, 3000);
+    }, 1000);
   });
 }
 
-export default function ItemList() {
+export default function ItemDetailContainer() {
+  const params = useParams();
   const [item, setItem] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
-  import image from "./macbook.jpg";
 
   React.useEffect(() => {
-    getProductById().then((result) => {
+    getProductById(params.id).then((result) => {
       setItem(result);
       setLoading(false);
     });
-  }, []);
+  }, [params.id]);
 
   return loading ? (
     <div>
@@ -32,10 +34,3 @@ export default function ItemList() {
     <ItemDetail item={item} />
   );
 }
-const product = {
-  id: 0,
-  src: image,
-  name: "MacBook Pro 1",
-  description: "I7 3.40gz",
-  price: "700$",
-};

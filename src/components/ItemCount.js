@@ -1,5 +1,4 @@
 import React from "react";
-import ItemList from "./ItemList";
 
 function ItemCount({ initial, min, max, onAdd }) {
   const [count, setCount] = React.useState(initial);
@@ -31,7 +30,7 @@ function ItemCount({ initial, min, max, onAdd }) {
         className=" shadow bg-gray-600 text-base w-auto ml-auto mr-auto items-center text-center hover:bg-gray-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded "
         onClick={() => onAdd(count)}
       >
-        COMPRAR
+        Add to Cart
       </button>
     </div>
   );

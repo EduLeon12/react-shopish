@@ -1,13 +1,13 @@
 import React from "react";
 import Item from "./Item";
 import logo from "../logo.svg";
-import image from "../macbook.jpg";
+import { products } from "../db";
 
 function getProducts() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(products);
-    }, 2000);
+    }, 500);
   });
 }
 
@@ -37,69 +37,3 @@ export default function ItemList() {
     </ul>
   );
 }
-const products = [
-  {
-    id: 0,
-    src: image,
-    name: "MacBook Pro 1",
-    description: "I7 3.40gz",
-    price: "700$",
-    stock: 7,
-  },
-  {
-    id: 1,
-    src: "",
-    name: "MacBook Pro 2",
-    description: "I7 3.40gz",
-    price: "700$",
-    stock: 5,
-  },
-  {
-    id: 2,
-    src: "./macbook.jpg",
-    name: "MacBook Pro 3",
-    description: "I7 3.40gz",
-    price: "700$",
-    stock: 5,
-  },
-  {
-    id: 3,
-    src: "",
-    name: "MacBook Pro 4",
-    description: "I7 3.40gz",
-    price: "700$",
-    stock: 8,
-  },
-  {
-    id: 4,
-    src: "",
-    name: "MacBook Pro 5 ",
-    description: "I7 3.40gz",
-    price: "700$",
-    stock: 5,
-  },
-  {
-    id: 5,
-    src: "",
-    name: "MacBook Pro 6",
-    description: "I7 3.40gz",
-    price: "700$",
-    stock: 6,
-  },
-  {
-    id: 6,
-    src: "",
-    name: "MacBook Pro 7",
-    description: "I7 3.40gz",
-    price: "700$",
-    stock: 3,
-  },
-  {
-    id: 7,
-    src: "",
-    name: "MacBook Pro 8",
-    description: "I7 3.40gz",
-    price: "700$",
-    stock: 4,
-  },
-];

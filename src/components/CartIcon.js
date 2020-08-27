@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function CartIcon() {
   return (
-    <Link to={`/Cart`}>
+    <Link to={"/Cart"}>
       <svg
         className="fill-current hover:text-black"
         xmlns="http://www.w3.org/2000/svg"
