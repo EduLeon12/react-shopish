@@ -7,6 +7,7 @@ function Home({ greeting }) {
   return (
     <main className="App-header bg-white mx-auto">
       <Intro />
+      <h2 className="text-black items ">Shop</h2>
       <ItemList />
       <About />
     </main>

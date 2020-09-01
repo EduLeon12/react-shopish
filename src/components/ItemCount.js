@@ -18,11 +18,17 @@ function ItemCount({ initial, min, max, onAdd }) {
   return (
     <div className="mx-auto items-center">
       <div>
-        <button className="m-1" onClick={decrement}>
+        <button
+          className="m-1 cursor-pointer hover:bg-gray-200 "
+          onClick={decrement}
+        >
           -
         </button>{" "}
         <span>{count}</span>{" "}
-        <button className="m-1" onClick={increment}>
+        <button
+          className="m-1 cursor-pointer hover:bg-gray-200 "
+          onClick={increment}
+        >
           +
         </button>
       </div>

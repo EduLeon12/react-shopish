@@ -28,9 +28,9 @@ export default function ItemList() {
       <h4>Loading...</h4>
     </div>
   ) : (
-    <ul className="container bg-gray-100  p-6 flex flex-wrap m-auto">
+    <ul className="container bg-white p-6 flex flex-wrap m-auto">
       {products.map((item) => (
-        <li className="bg-gray-900 flex mx-auto " key={item.id}>
+        <li className="bg-gray-100 flex mx-auto " key={item.id}>
           <Item item={item} />
         </li>
       ))}
