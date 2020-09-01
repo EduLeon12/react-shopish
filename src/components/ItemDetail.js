@@ -3,6 +3,7 @@ import ItemCount from "./ItemCount";
 
 export default function ItemDetail({ item }) {
   const { name, description, src, price, stock } = item;
+
   return (
     <div className=" bg-gray-900  p-6 flex flex-col my-auto mx-1">
       <img src={src} className=" w-full " />
