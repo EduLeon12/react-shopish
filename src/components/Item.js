@@ -8,7 +8,7 @@ export default function Item({ item }) {
       <img className="h-24 w-auto" src={src} alt=""></img>
       <div className="flex justify-between items-center py-2  ">
         <h1 className="mx-1 text-black">{name}</h1>
-        <span className="mx-1 text-black">{price}</span>
+        <span className="mx-1 text-black">{price}$</span>
       </div>
       <Link to={`/items/${id}`}>
         <button className="shadow bg-gray-600 text-base w-auto ml-auto mr-auto items-center text-center hover:bg-gray-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">

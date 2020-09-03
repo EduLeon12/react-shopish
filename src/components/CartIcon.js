@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../CartContext";
 
-function CartIcon() {
+export default function CartIcon() {
+  const { quantity } = useCartContext();
   return (
-    <Link to={"/Cart"}>
+    <Link className="flex items-center justify-center" to="/cart">
       <svg
         className="fill-current hover:text-black"
         xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +17,9 @@ function CartIcon() {
         <circle cx="10.5" cy="18.5" r="1.5"></circle>
         <circle cx="17.5" cy="18.5" r="1.5"></circle>
       </svg>
+      {quantity > 0 && (
+        <span className="text-sm text-black ml-2 ">{quantity}</span>
+      )}
     </Link>
   );
 }
-export default CartIcon;

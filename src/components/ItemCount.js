@@ -18,27 +18,29 @@ function ItemCount({ initial, min, max, onAdd }) {
   return (
     <div className="mx-auto items-center">
       <div>
-        <button
-          className="m-1 cursor-pointer hover:bg-gray-200 "
-          onClick={decrement}
-        >
-          -
-        </button>{" "}
-        <span>{count}</span>{" "}
-        <button
-          className="m-1 cursor-pointer hover:bg-gray-200 "
-          onClick={increment}
-        >
-          +
-        </button>
+        {count !== min && (
+          <button
+            className="m-1 cursor-pointer hover:bg-gray-200 "
+            onClick={decrement}
+          >
+            -
+          </button>
+        )}
+        <span>{count}</span>
+        {count !== max && (
+          <button
+            className="m-1 cursor-pointer hover:bg-gray-200 "
+            onClick={increment}
+          >
+            +
+          </button>
+        )}
       </div>
       <button
         className=" shadow bg-gray-600 text-base w-auto ml-auto mr-auto items-center text-center hover:bg-gray-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded "
         onClick={() => onAdd(count)}
       >
-        Add
-        <span className="mx-2">{count}</span>
-        to Cart
+        Add to Cart
       </button>
     </div>
   );

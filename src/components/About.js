@@ -2,7 +2,7 @@ import React from "react";
 
 export default function About() {
   return (
-    <section className="p-5 m-auto">
+    <section className="p-5 m-auto bg-gray-300">
       <h3 className="text-left text-black"> About</h3>
       <p className="text-justify text-sm text-black">
         Lorem ipsum dolor sit amet, consectetur random link adipiscing elit, sed
