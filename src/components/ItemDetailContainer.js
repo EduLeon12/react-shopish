@@ -26,8 +26,8 @@ export default function ItemDetailContainer() {
   }, [params.id]);
 
   return loading ? (
-    <div>
-      <img src={logo} className="App-logo" alt="logo" />
+    <div className="container flex flex-col items-center justify-center">
+      <img src={logo} className="App-logo " alt="logo" />
       <h4>Loading...</h4>
     </div>
   ) : (
