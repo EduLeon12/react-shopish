@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Item({ item }) {
-  const { name, price, id, src } = item;
+  const { name, price, id, procesador, image } = item;
   return (
     <div className=" bg-gray-100  p-6 flex flex-col my-auto mx-1">
-      <img className="h-24 w-auto" src={src} alt=""></img>
+      <img className="h-24 w-auto" src={image} alt=""></img>
       <div className="flex justify-between items-center py-2  ">
         <h1 className="mx-1 text-black">{name}</h1>
+        <span className="mx-1 text-black">{procesador}</span>
         <span className="mx-1 text-black">{price}$</span>
       </div>
       <Link to={`/items/${id}`}>

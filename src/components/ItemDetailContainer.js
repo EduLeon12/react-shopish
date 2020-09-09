@@ -2,16 +2,7 @@ import React from "react";
 import ItemDetail from "./ItemDetail";
 import logo from "../logo.svg";
 import { useParams } from "react-router-dom";
-import { products } from "../db";
-
-function getProductById(id) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const product = products.find((product) => product.id.toString() === id);
-      resolve(product);
-    }, 1000);
-  });
-}
+import { getFirestore } from "../firebase";
 
 export default function ItemDetailContainer() {
   const params = useParams();
@@ -19,10 +10,23 @@ export default function ItemDetailContainer() {
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    getProductById(params.id).then((result) => {
-      setItem(result);
-      setLoading(false);
-    });
+    const dataBase = getFirestore();
+    const itemRef = dataBase.collection("items").doc(params.id);
+
+    itemRef
+      .get()
+      .then((doc) => {
+        if (!doc.exist) {
+          console.log("No results");
+        }
+        setItem({ ...doc.data(), id: doc.id });
+      })
+      .catch((error) => {
+        console.log("Error searching items", error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, [params.id]);
 
   return loading ? (
