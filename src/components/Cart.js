@@ -2,6 +2,7 @@ import React from "react";
 import { useCartContext } from "../CartContext";
 import emptyCart from "../emptyCart.png";
 import { Link } from "react-router-dom";
+import Checkout from "./Checkout";
 
 export default function Cart() {
   const { cart, cleanCart, quantity } = useCartContext();
@@ -31,9 +32,11 @@ export default function Cart() {
         >
           Clean Cart
         </button>
-        <button className="  shadow bg-gray-600 text-base w-auto m-2 items-center text-center hover:bg-gray-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded ">
-          Checkout
-        </button>
+        <Link to="/checkout">
+          <button className="  shadow bg-gray-600 text-base w-auto m-2 items-center text-center hover:bg-gray-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded ">
+            Checkout
+          </button>
+        </Link>
       </div>
     </div>
   ) : (

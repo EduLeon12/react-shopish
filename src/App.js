@@ -7,6 +7,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemList from "./components/ItemList";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import { CartProvider } from "./CartContext";
+import Checkout from "./components/Checkout";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
             </Route>
             <Route path="/cart">
               <Cart />
+            </Route>
+            <Route path="/checkout">
+              <Checkout />
             </Route>
           </Switch>
         </div>
