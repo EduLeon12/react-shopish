@@ -6,6 +6,9 @@ export const useCartContext = () => useContext(CartContext);
 
 export function CartProvider({ children }) {
   const [cart, setCart] = React.useState([]);
+  const subTotal = cart.reduce((total, cartItem) => {
+    return cartItem.quantity * cartItem.item.price + total;
+  }, 0);
 
   function addItem(newItem) {
     const currentItemIndex = cart.findIndex(
@@ -31,7 +34,9 @@ export function CartProvider({ children }) {
   }, 0);
 
   return (
-    <CartContext.Provider value={{ cart, addItem, quantity, cleanCart }}>
+    <CartContext.Provider
+      value={{ cart, addItem, quantity, cleanCart, subTotal }}
+    >
       {children}
     </CartContext.Provider>
   );
