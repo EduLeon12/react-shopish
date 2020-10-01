@@ -2,9 +2,9 @@ import React from "react";
 
 export default function Filter({ onChange }) {
   return (
-    <div className="  flex-start flex-col flex-start">
+    <div className="container justify-center   flex-col mx-auto">
       <h3 className="text-sm text-black"> Filters </h3>
-      <div className="flex flex-wrap w-full ">
+      <div className="flex flex-wrap w-full mx-auto  ">
         <input
           className="px-4 rounded shadow bg-black mr-1 "
           onClick={() => onChange("I3")}

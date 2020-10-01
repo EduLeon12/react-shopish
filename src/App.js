@@ -7,6 +7,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ItemList from "./components/ItemList";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import { CartProvider } from "./CartContext";
+import About from "./components/About";
+import ContactForm from "./components/ContactForm";
 
 function App() {
   return (
@@ -26,6 +28,12 @@ function App() {
             </Route>
             <Route path="/cart">
               <Cart />
+            </Route>
+            <Route path="/contactform">
+              <ContactForm />
+            </Route>
+            <Route path="/about">
+              <About />
             </Route>
           </Switch>
         </div>

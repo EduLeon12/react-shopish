@@ -39,7 +39,8 @@ export default function Checkout() {
         setOrder(id);
       })
       .catch((err) => {
-        setError(err);
+        setError(err.toString());
+        console.error(err);
       })
       .finally(() => {
         setLoading(false);
@@ -51,23 +52,28 @@ export default function Checkout() {
 
   return order ? (
     <div>
-      <h1>
+      <h1 className="m-4">
         {" "}
-        Congratulations on your purchase!! Order number <strong>{order}</strong>
+        Felicitaciones por tu compra!! <strong>{name}</strong>
+      </h1>{" "}
+      <h1 className="m-4">
+        {" "}
+        Tu numero de orden es
+        <strong>{order}</strong>
       </h1>{" "}
     </div>
   ) : (
-    <div className="container flex  items-center bg-white">
+    <div className="container flex  items-center bg-white m-4">
       <form className=" container flex flex-col items-center">
         <label htmlFor="name" className="text-base text-black w-1/2">
           {" "}
           Nombre Completo{" "}
-          <input
-            id="name"
-            onChange={nameChange}
-            className="border rounded border-black max-w-sm"
-          />
         </label>
+        <input
+          id="name"
+          onChange={nameChange}
+          className="border rounded border-black max-w-sm"
+        />
         <label htmlFor="email" className="text-base text-black w-1/2">
           {" "}
           Email{" "}
@@ -103,6 +109,7 @@ export default function Checkout() {
           </button>
         )}
       </form>
+      {error && <h1 className="text-red-500">ERROR {error}</h1>}
     </div>
   );
 }

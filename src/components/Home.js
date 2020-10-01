@@ -1,15 +1,14 @@
 import React from "react";
-import ItemList from "./ItemList";
+
 import Intro from "./Intro";
-import About from "./About";
+
+import Sections from "./Sections";
 
 function Home({ greeting }) {
   return (
-    <main className="App-header bg-white mx-auto">
+    <main className="App-header bg-black mx-auto">
       <Intro />
-      <h2 className="text-black items-left ">Shop</h2>
-      <ItemList />
-      <About />
+      <Sections />
     </main>
   );
 }
