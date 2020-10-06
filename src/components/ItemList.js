@@ -3,11 +3,17 @@ import Item from "./Item";
 import logo from "../logo.svg";
 import { getFirestore } from "../firebase";
 import Filter from "./Filter";
+import { useLocation } from "react-router-dom";
 
 export default function ItemList() {
-  const [filter, setFilter] = React.useState(null);
+  let query = useQuery();
+  const filter = query.get("procesador");
   const [items, setItems] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
+
+  function useQuery() {
+    return new URLSearchParams(useLocation().search);
+  }
 
   React.useEffect(() => {
     const dataBase = getFirestore();
@@ -40,7 +46,7 @@ export default function ItemList() {
     </div>
   ) : (
     <>
-      <Filter onChange={setFilter} />
+      <Filter />
       <ul className="container bg-white p-6 flex flex-wrap m-auto">
         {items.map((item) => (
           <li className="bg-gray-100 flex mx-auto " key={item.id}>
