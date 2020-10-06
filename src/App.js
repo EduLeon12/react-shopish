@@ -19,12 +19,10 @@ function App() {
           <Switch>
             <Route exact path="/">
               <Home greeting="Bienvenidos a mi ecommerce" />
+              <ItemList />
             </Route>
             <Route path="/items/:id">
               <ItemDetailContainer />
-            </Route>
-            <Route path="/items">
-              <ItemList />
             </Route>
             <Route path="/cart">
               <Cart />

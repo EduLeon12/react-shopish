@@ -12,6 +12,10 @@ export default function Checkout() {
   const [name, setName] = React.useState();
   const [email, setEmail] = React.useState();
   const [phone, setPhone] = React.useState();
+  const [confirmedEmail, setConfirmedEmail] = React.useState();
+
+  const emailsIguales = email === confirmedEmail;
+  const msjErrorEmails = emailsIguales ? null : "Emails deben ser iguales";
 
   function handleOrderSubmit() {
     setLoading(true);
@@ -49,6 +53,7 @@ export default function Checkout() {
   const nameChange = (event) => setName(event.target.value);
   const emailChange = (event) => setEmail(event.target.value);
   const phoneChange = (event) => setPhone(event.target.value);
+  const confirmedEmailChange = (event) => setConfirmedEmail(event.target.value);
 
   return order ? (
     <div>
@@ -84,6 +89,17 @@ export default function Checkout() {
           onChange={emailChange}
           className="border rounded border-black max-w-sm"
         />
+        <label htmlFor="confimarEmail" className="text-base text-black w-1/2">
+          {" "}
+          Confirmar Email{" "}
+        </label>
+        <input
+          id="confimarEmail"
+          type="email"
+          onChange={confirmedEmailChange}
+          className="border rounded border-black max-w-sm"
+        />
+        <p className="text-red-500 text-xs italic">{msjErrorEmails}</p>
         <label htmlFor="telefono" className="text-base text-black">
           {" "}
           Telefono{" "}
@@ -102,6 +118,7 @@ export default function Checkout() {
           </div>
         ) : (
           <button
+            disabled={Boolean(msjErrorEmails)}
             onClick={handleOrderSubmit}
             className="shadow  bg-gray-600 text-base w-auto m-2 items-center text-center hover:bg-gray-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded  "
           >
